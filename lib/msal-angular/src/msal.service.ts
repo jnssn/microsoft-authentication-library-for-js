@@ -73,7 +73,7 @@ export class MsalService extends UserAgentApplication {
 
         const unprotectedResources = frameworkUnprotectedResources && frameworkUnprotectedResources.length ? frameworkUnprotectedResources : configUnprotectedResources;
 
-        return unprotectedResources.some(resource => url.indexOf(resource) > -1);
+        return unprotectedResources.some(resource => url.startsWith(resource));
     }
 
     private isEmpty(str: string): boolean {
